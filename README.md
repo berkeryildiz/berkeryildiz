@@ -10,7 +10,7 @@ I work mostly in TypeScript and Node.js, with React and Next.js on the front end
 
 ## Macko: live football dashboard with match analysis
 
-![Macko](assets/macko-1-analiz.png)
+![Macko](assets/macko.png)
 <!-- Other options: assets/macko-2-telefon.png (three phone screens) or assets/macko-3-pano.png (live dashboard, wide) -->
 
 A dashboard I use every day to follow 100+ matches a day across European leagues, the Champions League, the NBA and more, with live scores, a nine-day calendar and goal notifications.
