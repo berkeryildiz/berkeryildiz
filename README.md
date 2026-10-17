@@ -1,17 +1,20 @@
 # Hi, I'm Berker
 
-I build products around sport and games: live data dashboards, browser games, and the content tools that keep a brand's channels running. I like taking an idea from a blank page to something people use every day, and I care about the parts that don't show on a screenshot: data quality, fair rules, and numbers I can defend.
+I work in product and growth, and I build the products myself: live sports data dashboards, browser games, and the content tools that keep a brand's channels running. I like taking an idea from a blank page to something people use every day, and I care about the parts that don't show on a screenshot: data quality, fair rules, and numbers I can defend.
 
-I work mostly in TypeScript and Node.js, with React and Next.js on the front end. I pair with Claude Code daily: I set the direction and the design, and I check every result before it ships.
+I build mostly in TypeScript and Node.js, with React and Next.js on the front end. I pair with Claude Code daily: I set the direction and the design, and I check every result before it ships.
 
-(https://www.linkedin.com/in/berkeryildiz) · berkeryildiz99@gmail.com · İstanbul, Turkey
+Open to product, growth and product-minded engineering roles in gaming, sports and tech.
+
+<a href="https://www.linkedin.com/in/berkeryildiz"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn"></a>
+<a href="mailto:berkeryildiz99@gmail.com"><img src="https://img.shields.io/badge/Email-30363d?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+<img src="https://img.shields.io/badge/%C4%B0stanbul%2C_T%C3%BCrkiye-30363d?style=for-the-badge" alt="İstanbul, Türkiye">
 
 ---
 
 ## Macko: live football dashboard with match analysis
 
 ![Macko](assets/macko.png)
-<!-- Other options: assets/macko-2-telefon.png (three phone screens) or assets/macko-3-pano.png (live dashboard, wide) -->
 
 A dashboard I use every day to follow 100+ matches a day across European leagues, the Champions League, the NBA and more, with live scores, a nine-day calendar and goal notifications.
 
@@ -24,6 +27,8 @@ It stays usable when the data feed misbehaves: a shared request budget, a circui
 ## Kutubil: daily film trivia grid ([play it](https://oyna.kutubil.workers.dev))
 
 ![Kutubil](assets/kutubil.png)
+
+**Built and shipped in under 24 hours:** first commit on a Saturday evening, live on Cloudflare the next afternoon with the data pipeline and online rooms working; automated backups and a guarded deploy followed the same evening.
 
 A daily 3×3 grid for film fans: name an actor who fits both the row and the column. Film data comes from Wikidata and TMDB, gets cleaned into six catalogues (global, Turkish film and TV, Korean, Gen-Z and a mix), and a generator builds a new grid every night. You can also challenge a friend in a live room.
 
