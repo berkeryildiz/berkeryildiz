@@ -6,9 +6,9 @@ I build mostly in TypeScript and Node.js, with React and Next.js on the front en
 
 Open to product, growth and product-minded engineering roles in gaming, sports and tech.
 
-<a href="https://www.linkedin.com/in/berkeryildiz"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge" alt="LinkedIn"></a>
-<a href="mailto:berkeryildiz99@gmail.com"><img src="https://img.shields.io/badge/Email-30363d?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-<img src="https://img.shields.io/badge/%C4%B0stanbul%2C_T%C3%BCrkiye-30363d?style=for-the-badge" alt="İstanbul, Türkiye">
+<a href="https://www.linkedin.com/in/berkeryildiz"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYy0xLjE0NCAwLTIuMDYzLS45MjYtMi4wNjMtMi4wNjUgMC0xLjEzOC45Mi0yLjA2MyAyLjA2My0yLjA2MyAxLjE0IDAgMi4wNjQuOTI1IDIuMDY0IDIuMDYzIDAgMS4xMzktLjkyNSAyLjA2NS0yLjA2NCAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8+PC9zdmc+" alt="LinkedIn"></a>
+<a href="mailto:berkeryildiz99@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
+<img src="https://img.shields.io/badge/%C4%B0STANBUL%2C_T%C3%9CRK%C4%B0YE-30363d?style=for-the-badge&logo=googlemaps&logoColor=white" alt="İstanbul, Türkiye">
 
 ---
 
@@ -44,9 +44,9 @@ Managers build squads and play each other in a weekly league. I wrote the simula
 
 ---
 
-## Content systems and brand design
+## AI-powered automation and brand systems
 
-Most social content breaks down the same way: every post is designed from scratch, so the look drifts and the text gets mangled by image models. I build systems that fix both.
+I build automation that takes repetitive work off people's plates: agents that research and write, pipelines that collect and clean data, and template systems that keep every output on-brand. Some examples:
 
 - **Brand systems in Claude Design.** For Firing XI I designed the whole identity on a Claude Design canvas: logo, colour and type tokens, and ready-made templates for posts, stories and thumbnails. All of them read from one tokens file, so a new post comes out on-brand without being redesigned, and the game's interface uses the same file.
 - **Social content agent** for a football game's accounts. It learns the brand's voice from past posts, plans a week of varied ideas across content pillars, and writes a ready-to-use image prompt for each, with automated checks against the brand rules.
