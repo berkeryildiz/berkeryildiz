@@ -14,7 +14,9 @@ Open to product, growth and product-minded engineering roles in gaming, sports a
 
 ## Macko: live football dashboard with match analysis
 
-![Macko](assets/macko.png)
+![Macko](assets/macko-hero.png)
+![Macko](assets/macko-medyum.png)
+![Macko](assets/macko-telefon.png)
 
 A dashboard I use every day to follow 100+ matches a day across European leagues, the Champions League, the NBA and more, with live scores, a nine-day calendar and goal notifications.
 
