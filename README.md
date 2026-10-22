@@ -12,19 +12,30 @@ Open to product, growth and product-minded engineering roles in gaming, sports a
 
 ---
 
-## Macko: live football dashboard with match analysis
+## Macko: football match intelligence
+
+![Macko on mobile: live match stats, model factors, score probabilities](assets/macko-telefon.png)
+
+**The problem.** Pre-match information is scattered across a dozen sources, and most predictions can't say why they think what they think, or how often they turn out right.
+
+**What Macko does.** It turns every match into one screen of evidence plus a model you can audit. I use it every day across 100+ matches a day (European leagues, UEFA competitions, the NBA), with live, upcoming and finished views and a nine-day calendar.
+
+- **A sourced match file.** Scorers and assists, the last five results, likely absentees with a probability for each ("missed the last two matches: 94% likely out"), coach tenure, travel distance, rest days and kick-off weather. Where a source has nothing, it says "no data" instead of guessing.
+- **Live match view.** Possession, shots, corners and cards as the game goes, plus starting line-ups as soon as they are announced. Mobile-first, with a built-in phone preview.
+- **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second, Medyum, is fully independent: a layered goal model trained on 2,543 matches that never sees market prices, then shows where it disagrees and why, factor by factor.
+
+![Macko on desktop: the independent model explains its view](assets/macko-medyum.png)
+
+**Measured, not claimed.**
+
+- The first model, tested on 290 finished matches: correct results rose from 50.7% to 55.2%, and calls marked high-confidence were right 72% of the time.
+- The independent model, in a walk-forward backtest where each week is trained only on the past: no edge over the market yet (log-loss 0.990 against 0.961). The app states this on screen and keeps the model labelled beta until two to three months of live tracking say otherwise.
 
 ![Macko](assets/macko-hero.png)
-![Macko](assets/macko-medyum.png)
-![Macko](assets/macko-telefon.png)
 
-A dashboard I use every day to follow 100+ matches a day across European leagues, the Champions League, the NBA and more, with live scores, a nine-day calendar and goal notifications.
+**Built to run unattended.** Request budgets, a circuit breaker and disk caches keep it up when a data feed fails, and model training runs in a worker thread so the dashboard never freezes.
 
-Each match has an analysis panel that pulls together who is scoring, the last five results, missing players and the weather at kick-off, each figure with its source noted and "no data" shown instead of a guess. On top of that sits a probability model (Poisson goals, result first, then the most likely score in that result) with small, capped adjustments for form, injuries and weather. I measured it on 290 finished matches: correct results went from 50.7% to 55.2% also calls marked high-confidence were right 72% of the time.
-
-It stays usable when the data feed misbehaves: a shared request budget, a circuit breaker and a disk cache keep it running instead of going blank.
-
-`Next.js 14` `TypeScript` `Tailwind` `Zod` `Recharts` `Open-Meteo` `Wikidata`
+`Next.js` `TypeScript` `Node.js worker threads` `Poisson and ridge regression` `ESPN` `FPL` `Open-Meteo` `Wikidata`
 
 ## Kutubil: daily film trivia grid ([play it](https://oyna.kutubil.workers.dev))
 
