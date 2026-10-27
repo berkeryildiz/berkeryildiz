@@ -22,23 +22,29 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 
 <table>
   <tr>
-    <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores, and what moved the forecast" width="100%"></td>
+    <td colspan="3" align="center"><b>The independent model</b> — Genoa vs Juventus: its own match file, built without market prices</td>
+  </tr>
+  <tr>
     <td width="33%" align="center"><img src="assets/macko-02-absentees.png" alt="Absentees: goalkeeper record and likely missing players with a probability for each" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-03-lineups.png" alt="Probable line-ups of both teams on the pitch" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/macko-05-form.png" alt="Form and calendar: table position, last ten results, congestion, goal difference against expectation" width="100%"></td>
   </tr>
   <tr>
-    <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores, and what moved the forecast</sub></td>
     <td align="center"><kbd>Absentees</kbd><br><sub>Who is likely to be missing, with a probability learned from the past for each name</sub></td>
     <td align="center"><kbd>Line-ups</kbd><br><sub>Probable eleven of both teams, replaced by the real one as soon as it is announced</sub></td>
+    <td align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
   </tr>
   <tr>
+    <td colspan="3" align="center"><b>The first model</b> — AC Milan vs Bologna: market consensus, adjusted and graded</td>
+  </tr>
+  <tr>
+    <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores, and what moved the forecast" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-04-probabilities.png" alt="Probabilities: the most likely score inside the chosen result, then the score grid" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-05-form.png" alt="Form and calendar: table position, last ten results, congestion, goal difference against expectation" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-06-weather.png" alt="Weather: kick-off forecast and each team's record in that weather" width="100%"></td>
   </tr>
   <tr>
+    <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores, and what moved the forecast</sub></td>
     <td align="center"><kbd>Probabilities</kbd><br><sub>The most likely score inside the chosen result, then the full score grid</sub></td>
-    <td align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
     <td align="center"><kbd>Weather</kbd><br><sub>Kick-off forecast from Open-Meteo and how each team has done in that weather</sub></td>
   </tr>
 </table>
