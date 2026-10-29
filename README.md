@@ -14,7 +14,9 @@ Open to product, data analytics and AI-automation roles in gaming, sports, tech 
 
 One screen of evidence per match, two forecasting models you can audit, and a measurement loop that says how often they are right.
 
-![Macko on desktop: the match window with the forecast, its confidence grade, who scores and coach tenure](assets/macko-hero.png)
+![Macko on desktop: the match window for Barcelona vs Real Madrid in its pre-match view, with the recorded forecast, its confidence grade, who scores and coach tenure](assets/macko-hero.png)
+
+<sub>El Clásico, 25 Oct 2026, reopened in its pre-match view: the forecast recorded at 19:57 UTC, three minutes before kick-off, said Barcelona 2-1 with high confidence (60%). Real Madrid won 1–2. It stays on top as a miss; the hit is further down (Galatasaray – Fenerbahçe, 2-1 as forecast).</sub>
 
 **The problem.** Pre-match information is scattered across a dozen sources, and most predictions can't say why they think what they think, or how often they turn out right.
 
@@ -22,30 +24,30 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 
 <table>
   <tr>
-    <td colspan="3" align="center"><b>The independent model</b> — Genoa vs Juventus: its own match file, built without market prices</td>
+    <td colspan="3" align="center"><b>The independent model</b> — Galatasaray vs Fenerbahçe: its own match file, built without market prices. Pre-match view, rebuilt only with data available before match day</td>
   </tr>
   <tr>
     <td width="33%" align="center"><img src="assets/macko-02-absentees.png" alt="Absentees: goalkeeper record and likely missing players with a probability for each" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-03-lineups.png" alt="Probable line-ups of both teams on the pitch" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/macko-03-lineups.png" alt="Probable line-ups of both teams on the pitch, in club colours" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-05-form.png" alt="Form and calendar: table position, last ten results, congestion, goal difference against expectation" width="100%"></td>
   </tr>
   <tr>
     <td align="center"><kbd>Absentees</kbd><br><sub>Who is likely to be missing, with a probability learned from the past for each name</sub></td>
-    <td align="center"><kbd>Line-ups</kbd><br><sub>Probable eleven of both teams, replaced by the real one as soon as it is announced</sub></td>
+    <td align="center"><kbd>Line-ups</kbd><br><sub>Probable eleven of both teams in club colours, replaced by the real one as soon as it is announced</sub></td>
     <td align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>The first model</b> — AC Milan vs Bologna: market consensus, adjusted and graded</td>
+    <td colspan="3" align="center"><b>The first model</b> — Galatasaray vs Fenerbahçe: market consensus, adjusted and graded. Recorded at 18:03 UTC, 26 minutes before kick-off; the score came in exactly as forecast</td>
   </tr>
   <tr>
     <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores, and what moved the forecast" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-04-probabilities.png" alt="Probabilities: the most likely score inside the chosen result, then the score grid" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-06-weather.png" alt="Weather: kick-off forecast and each team's record in that weather" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/macko-06-weather.png" alt="Weather: kick-off weather and each team's record in that weather" width="100%"></td>
   </tr>
   <tr>
     <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores, and what moved the forecast</sub></td>
     <td align="center"><kbd>Probabilities</kbd><br><sub>The most likely score inside the chosen result, then the full score grid</sub></td>
-    <td align="center"><kbd>Weather</kbd><br><sub>Kick-off forecast from Open-Meteo and how each team has done in that weather</sub></td>
+    <td align="center"><kbd>Weather</kbd><br><sub>Kick-off weather from Open-Meteo (the observed weather, for a finished match) and how each team has done in it</sub></td>
   </tr>
 </table>
 
@@ -55,8 +57,11 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 - **An availability model.** Each player is placed in a class ("missed the last two matches", "suspended", "subbed off before half-time") and the model learns, from the past, how often each class actually sits out: 93% for "missed the last two", 82% for suspensions. The screen shows the name and the number.
 - **Live match view.** Possession, shots, expected goals (xG and xGOT), big chances, PPDA and a pressure timeline as the game goes, plus line-ups as soon as they are announced. Mobile-first.
 - **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second is fully independent: a layered Poisson goal model trained week by week only on the past (5,113 detailed matches with line-ups, player stats, goal events and closing prices, plus 4,825 result-only rows across ten leagues since 2024-25), that never sees market prices and shows where it disagrees and why, factor by factor.
+- **A pre-match view for finished matches.** Any finished match can be reopened as it looked before kick-off: the first model's forecast comes from the record locked at kick-off, the independent model is retrained only on matches played before that day, player stats are cut at kick-off, and the screen labels the view. Every screenshot here uses it, with that label hidden to keep the shots clean.
 
-![The independent model on desktop: its own probabilities, pros and cons per factor, likely absentees, travel, rest and weather](assets/macko-medyum.png)
+![The independent model on desktop, El Clásico in its pre-match view: its own probabilities, pros and cons per factor, likely absentees, travel, rest and weather](assets/macko-medyum.png)
+
+<sub>El Clásico, 25 Oct 2026 (Barcelona 1–2 Real Madrid), pre-match view. The market had Barcelona at 61%; the data-driven independent model (Medyum AI in the app) was more confident still at 69%; the rule-based variant hedged (54% Barcelona, 24% draw). All three favoured Barcelona and all three were wrong, so it stays here as a miss. One match is an illustration either way; the evidence is the measurement below.</sub>
 
 **Measured, not claimed**
 
