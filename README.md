@@ -54,23 +54,23 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 - **A sourced match file.** Scorers and assists, the last five results, coach tenure, travel distance, rest days and kick-off weather. Where a source has nothing, it says "no data" instead of guessing.
 - **An availability model.** Each player is placed in a class ("missed the last two matches", "suspended", "subbed off before half-time") and the model learns, from the past, how often each class actually sits out: 93% for "missed the last two", 82% for suspensions. The screen shows the name and the number.
 - **Live match view.** Possession, shots, expected goals (xG and xGOT), big chances, PPDA and a pressure timeline as the game goes, plus line-ups as soon as they are announced. Mobile-first.
-- **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second is fully independent: a layered Poisson goal model trained week by week only on the past (4,182 detailed matches with line-ups, player stats, goal events and closing prices, plus 5,644 result-only rows across nine leagues since 2024-25), that never sees market prices and shows where it disagrees and why, factor by factor.
+- **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second is fully independent: a layered Poisson goal model trained week by week only on the past (5,113 detailed matches with line-ups, player stats, goal events and closing prices, plus 4,825 result-only rows across ten leagues since 2024-25), that never sees market prices and shows where it disagrees and why, factor by factor.
 
 ![The independent model on desktop: its own probabilities, pros and cons per factor, likely absentees, travel, rest and weather](assets/macko-medyum.png)
 
 **Measured, not claimed**
 
-- **The first model, backtested on 4,140 finished matches** (two seasons, August 2024 to October 2026, ten leagues, closing prices): rebuilding the decision rule (pick the result first, then the most likely score inside it) took correct results from 51.1% to 55.4%, by the same margin in every season (+4.6, +4.0 and +4.8 points), and cut "1-1" picks from 31% to 10%. The honest part: picking the market favourite gets 56.5% on the same matches, so the model does not beat the market on who wins; where it departs from the favourite it loses a little, and that rule is next on the list. What it adds is a confidence grade that means something: high-confidence calls are correct 70.0% of the time (n=1,615, 95% CI 68–72), medium 50.8%, low 38.6%. The old grade was upside down (its "high" was right 49.5% of the time, its "medium" 59.9%).
+- **The first model, backtested on 5,071 finished matches** (two full seasons and the current one, August 2024 to October 2026, ten leagues, closing prices): rebuilding the decision rule (pick the result first, then the most likely score inside it) took correct results from 51.1% to 55.0%, by a similar margin in every season (+3.8, +3.8 and +4.7 points), and cut "1-1" picks from 31% to 10%. The honest part: picking the market favourite gets 56.0% on the same matches, so the model does not beat the market on who wins; where it departs from the favourite it loses a little, and that rule is next on the list. What it adds is a confidence grade that means something: high-confidence calls are correct 70.0% of the time (n=1,948, 95% CI 68–72), medium 50.8%, low 37.7%. The old grade was upside down (its "high" was right 49.5% of the time, its "medium" 59.9%).
 
   | | Correct result | "High" grade correct | Log-loss (lower is better) |
   |---|---|---|---|
-  | v1, old rule | 51.1% | 49.5% | 0.960 |
-  | v2, current | **55.4%** | **70.0%** (n=1,615) | **0.952** |
-  | Market favourite | 56.5% | — | 0.952 |
+  | v1, old rule | 51.1% | 49.5% | 0.963 |
+  | v2, current | **55.0%** | **70.0%** (n=1,948) | **0.953** |
+  | Market favourite | 56.0% | — | 0.953 |
 
-- **The independent model**, in a walk-forward backtest where each week is trained only on the past: no edge over the market yet (log-loss 0.990 against 0.961). The app says so on screen and keeps the model labelled beta until two to three months of live tracking say otherwise.
-- **Live tracking since 16 October:** 767 forecasts recorded as they were made, 489 settled so far; across every league the app covers, 54.0% correct results (95% CI 50–58), high-confidence 65.8%, in line with the backtest.
-- **A negative result, kept:** a rule-based variant built from my own football intuitions was tested the same way, with parameters frozen before the test. It lost to the data-driven model on 507 matches, and the write-up says which rule did the damage.
+- **The independent model**, in a walk-forward backtest where each week is trained only on the past: no edge over the market yet (log-loss 0.984 against the market's 0.954 on 4,749 matches). The app says so on screen and keeps the model labelled beta until two to three months of live tracking say otherwise.
+- **Live tracking since 16 October:** 947 forecasts recorded as they were made, 639 settled so far; across every league the app covers, 54.0% correct results (95% CI 50–58), high-confidence 64.9% (n=262), in line with the backtest.
+- **A negative result, kept:** a rule-based variant built from my own football intuitions was tested the same way, with parameters frozen before the test. It lost to the data-driven model on 609 matches, and the write-up says which rule did the damage.
 
 **Built to run unattended.** Request budgets, a circuit breaker and disk caches keep it up when a data feed fails; model training runs in a worker thread so the dashboard never freezes. Every model change re-runs the backtest before it ships.
 
