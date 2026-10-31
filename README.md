@@ -1,8 +1,8 @@
 # Hi, I'm Berker
 
-I work in product and data analytics and I build the products myself: a football match-intelligence tool with two forecasting models, a daily browser game and the automation that keeps a brand's channels running. I like taking an idea from a blank page to something people use every day, and I care about the parts that don't show on a screenshot: data quality, fair rules and numbers I can defend.
+I work in product and data analytics and build the products myself. Right now that means a football match-intelligence tool with two forecasting models, a daily browser game and the automation that keeps a brand's channels running. I like taking an idea from a blank page to something people use every day. What I care about most is what a screenshot doesn't show, mainly whether the data is right and the numbers hold up.
 
-I build mostly in TypeScript and Node.js, with React and Next.js on the front end. I pair with Claude Code every day: I set the direction and the design, every feature ships with tests and a measurement script, and I check every result before it ships.
+I build mostly in TypeScript and Node.js, with React and Next.js on the front end. I work with Claude Code every day, deciding what gets built and how it looks. Each feature comes with tests and a measurement script, and nothing goes live before I have checked the results myself.
 
 Open to product, data analytics and AI-automation roles in gaming, sports, tech and customer-experience operations.
 
@@ -12,19 +12,19 @@ Open to product, data analytics and AI-automation roles in gaming, sports, tech 
 
 ## Macko: football match intelligence
 
-One screen of evidence per match, two forecasting models you can audit, and a measurement loop that says how often they are right.
+One screen of evidence per match and two forecasting models you can audit. A measurement loop checks how often they are right.
 
 ![Macko on desktop: the match window for Barcelona vs Real Madrid in its pre-match view, with the recorded forecast, its confidence grade, who scores and coach tenure](assets/macko-hero.png)
 
-<sub>El Clásico, 25 Oct 2026, reopened in its pre-match view: the forecast recorded at 19:57 UTC, three minutes before kick-off, said Barcelona 2-1 with high confidence (60%). Real Madrid won 1–2. It stays on top as a miss; the hit is further down (Galatasaray – Fenerbahçe, 2-1 as forecast).</sub>
+<sub>El Clásico, 25 Oct 2026, reopened in its pre-match view. The forecast recorded at 19:57 UTC, three minutes before kick-off, said Barcelona 2-1 with high confidence (60%). Real Madrid won 1-2. The miss stays at the top and the hit is further down (Galatasaray vs Fenerbahçe, 2-1 as forecast).</sub>
 
-**The problem.** Pre-match information is scattered across a dozen sources, and most predictions can't say why they think what they think, or how often they turn out right.
+Pre-match information is scattered across a dozen sources. Most predictions can't explain themselves or say how often they turn out right.
 
-**What Macko does.** It turns every match into a sourced match file and a forecast that explains itself. It runs daily on 100+ matches (European leagues, UEFA competitions, the NBA) with live, upcoming and finished views and a nine-day calendar. It shows probabilities and evidence, not advice: it is a personal research tool, not a public service.
+Macko turns every match into a sourced match file and a forecast that explains itself. It covers 100+ matches a day (European leagues, UEFA competitions and the NBA), with live, upcoming and finished views and a nine-day calendar. It shows probabilities and the evidence behind them and makes no recommendations. It is a personal research tool and is not open to the public.
 
 <table>
   <tr>
-    <td colspan="3" align="center"><b>The independent model</b> — Galatasaray vs Fenerbahçe: its own match file, built without market prices. Pre-match view, rebuilt only with data available before match day</td>
+    <td colspan="3" align="center"><b>The independent model</b>: Galatasaray vs Fenerbahçe in its own match file, built without market prices. Pre-match view, rebuilt only from data available before match day</td>
   </tr>
   <tr>
     <td width="33%" align="center"><img src="assets/macko-02-absentees.png" alt="Absentees: goalkeeper record and likely missing players with a probability for each" width="100%"></td>
@@ -33,19 +33,19 @@ One screen of evidence per match, two forecasting models you can audit, and a me
   </tr>
   <tr>
     <td align="center"><kbd>Absentees</kbd><br><sub>Who is likely to be missing, with a probability learned from the past for each name</sub></td>
-    <td align="center"><kbd>Line-ups</kbd><br><sub>Probable eleven of both teams in club colours, replaced by the real one as soon as it is announced</sub></td>
+    <td align="center"><kbd>Line-ups</kbd><br><sub>Probable line-ups for both teams in club colours, replaced by the real ones as soon as they are announced</sub></td>
     <td align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
   </tr>
   <tr>
-    <td colspan="3" align="center"><b>The first model</b> — Galatasaray vs Fenerbahçe: market consensus, adjusted and graded. Recorded at 18:03 UTC, 26 minutes before kick-off; the score came in exactly as forecast</td>
+    <td colspan="3" align="center"><b>The first model</b>: Galatasaray vs Fenerbahçe from the market consensus, adjusted and graded. Recorded at 18:03 UTC, 26 minutes before kick-off. The score came in exactly as forecast</td>
   </tr>
   <tr>
-    <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores, and what moved the forecast" width="100%"></td>
+    <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores and what moved the forecast" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-04-probabilities.png" alt="Probabilities: the most likely score inside the chosen result, then the score grid" width="100%"></td>
     <td width="33%" align="center"><img src="assets/macko-06-weather.png" alt="Weather: kick-off weather and each team's record in that weather" width="100%"></td>
   </tr>
   <tr>
-    <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores, and what moved the forecast</sub></td>
+    <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores and what moved the forecast</sub></td>
     <td align="center"><kbd>Probabilities</kbd><br><sub>The most likely score inside the chosen result, then the full score grid</sub></td>
     <td align="center"><kbd>Weather</kbd><br><sub>Kick-off weather from Open-Meteo (the observed weather, for a finished match) and how each team has done in it</sub></td>
   </tr>
@@ -54,18 +54,21 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 **What's inside**
 
 - **A sourced match file.** Scorers and assists, the last five results, coach tenure, travel distance, rest days and kick-off weather. Where a source has nothing, it says "no data" instead of guessing.
-- **An availability model.** Each player is placed in a class ("missed the last two matches", "suspended", "subbed off before half-time") and the model learns, from the past, how often each class actually sits out: 93% for "missed the last two", 86% for suspensions. The screen shows the name and the number.
-- **Live match view.** Possession, shots, expected goals (xG and xGOT), big chances, PPDA and a pressure timeline as the game goes, plus line-ups as soon as they are announced. Mobile-first.
-- **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second is fully independent: a layered Poisson goal model trained week by week only on the past (5,895 detailed matches with line-ups, player stats, goal events and closing prices across ten leagues, plus 4,010 result-only rows, all since 2024-25), that never sees market prices and shows where it disagrees and why, factor by factor.
-- **A pre-match view for finished matches.** Any finished match can be reopened as it looked before kick-off: the first model's forecast comes from the record locked at kick-off, the independent model is retrained only on matches played before that day, player stats are cut at kick-off, and the screen labels the view. Every screenshot here uses it, with that label hidden to keep the shots clean.
+- **An availability model.** Each player is placed in a class ("missed the last two matches", "suspended", "subbed off before half-time"). The model learns from past matches how often each class actually sits out: 93% for "missed the last two" and 86% for suspensions. The screen shows each name with its number.
+- **Live match view.** Possession, shots, expected goals (xG and xGOT), big chances, PPDA and a pressure timeline during the game, plus line-ups as soon as they are announced. Built mobile-first.
+- **Two models side by side.** The first starts from the market consensus and adjusts it within tight caps for form, injuries and weather. The second is fully independent: a layered Poisson goal model trained week by week only on the past (5,895 detailed matches with line-ups, player stats and goal events across ten leagues, plus 4,010 result-only rows, all since 2024-25). It never sees market prices (closing prices are stored only to measure it) and shows, factor by factor, where it disagrees and why.
+- **A pre-match view for finished matches.** Any finished match can be reopened as it looked before kick-off. The first model's forecast comes from the record locked at kick-off. The independent model is retrained only on matches played before that day, with player stats cut at kick-off. Every screenshot here uses this view, with its on-screen label hidden to keep the shots clean.
 
 ![The independent model on desktop, El Clásico in its pre-match view: its own probabilities, pros and cons per factor, likely absentees, travel, rest and weather](assets/macko-medyum.png)
 
-<sub>El Clásico, 25 Oct 2026 (Barcelona 1–2 Real Madrid), pre-match view. The market had Barcelona at 61%; the data-driven independent model (Medyum AI in the app) was more confident still at 69%; the rule-based variant hedged (54% Barcelona, 24% draw). All three favoured Barcelona and all three were wrong, so it stays here as a miss. One match is an illustration either way; the evidence is the measurement below.</sub>
+<sub>El Clásico, 25 Oct 2026 (Barcelona 1-2 Real Madrid), pre-match view. The market had Barcelona at 61%. The data-driven independent model (Medyum AI in the app) was even more confident at 69%. The rule-based variant was more cautious (54% Barcelona, 24% draw). All three favoured Barcelona and all three were wrong. One match proves little either way. The numbers below cover 5,849 of them.</sub>
 
-**Measured, not claimed**
+**How often it is right**
 
-- **The first model, backtested on 5,849 finished matches** (two full seasons and the current one, August 2024 to October 2026, ten leagues, closing prices): rebuilding the decision rule (pick the result first, then the most likely score inside it) took correct results from 51.1% to 54.9%, by a similar margin in every season (+3.6, +3.8 and +4.6 points), and cut "1-1" picks from 30% to 10%. The honest part: picking the market favourite gets 55.9% on the same matches, so the model does not beat the market on who wins; where it departs from the favourite it loses a little, and that rule is next on the list. What it adds is a confidence grade that means something: high-confidence calls are correct 70.0% of the time (n=2,215, 95% CI 68–72), medium 50.2%, low 38.7%. The old grade was upside down (its "high" was right 49.5% of the time, its "medium" 60.0%).
+- **The first model**, backtested on 5,849 finished matches (August 2024 to October 2026, two full seasons and the current one, ten leagues, closing prices):
+  - Rebuilding the decision rule (pick the result first, then the most likely score within it) raised the share of correct results from 51.1% to 54.9%, with a similar gain in each season (+3.6, +3.8 and +4.6 points). "1-1" picks fell from 30% to 10%.
+  - Simply picking the market favourite gets 55.9% on the same matches, so the model does not beat the market at calling the winner. Where it goes against the favourite it loses slightly. That rule is what I am working on next.
+  - The confidence grade now tracks accuracy. High-confidence calls are right 70.0% of the time (n=2,215, 95% CI 68–72), medium 50.2% and low 38.7%. The old grade was upside down, with "high" right 49.5% of the time and "medium" 60.0%.
 
   | | Correct result | "High" grade correct | Log-loss (lower is better) |
   |---|---|---|---|
@@ -73,11 +76,11 @@ One screen of evidence per match, two forecasting models you can audit, and a me
   | v2, current | **54.9%** | **70.0%** (n=2,215) | **0.954** |
   | Market favourite | 55.9% | — | 0.954 |
 
-- **The independent model**, in a walk-forward backtest where each week is trained only on the past: no edge over the market yet (log-loss 0.985 against the market's 0.955 on 5,169 matches). The app says so on screen and keeps the model labelled beta until two to three months of live tracking say otherwise.
-- **Live tracking since 16 October:** 1,030 forecasts recorded as they were made, 740 settled so far; across every league the app covers, 55.1% correct results (95% CI 52–59), high-confidence 66.4% (n=301), in line with the backtest.
-- **A negative result, kept:** a rule-based variant built from my own football intuitions was tested the same way, with parameters frozen before the test. It lost to the data-driven model on 617 matches, and the write-up says which rule did the damage.
+- **The independent model** has no edge over the market yet. In a walk-forward backtest, where each week's model is trained only on earlier weeks, its log-loss is 0.985 against the market's 0.955 on 5,169 matches (the first three months are used only for training). The app says this on screen and keeps the model labelled beta until two to three months of live tracking show otherwise.
+- **Live tracking** since 16 October: 1,030 forecasts recorded at the time they were made, 740 of them settled so far. Across every league the app covers, 55.1% of settled forecasts got the result right (95% CI 52–59) and high-confidence calls were right 66.4% of the time (n=301), in line with the backtest.
+- **A rule-based variant** built from my own football intuitions was tested the same way, with its parameters frozen before the test. It did worse than the data-driven model on 617 matches. The write-up shows which rule did the damage.
 
-**Built to run unattended.** Request budgets, a circuit breaker and disk caches keep it up when a data feed fails; model training runs in a worker thread so the dashboard never freezes. Every model change re-runs the backtest before it ships.
+Macko is built to run unattended. Request budgets, a circuit breaker and disk caches keep it up when a data feed fails. Model training runs in a worker thread so the dashboard stays responsive. Every model change re-runs the backtest before it goes live.
 
 `Next.js` `TypeScript` `Node.js worker threads` `Poisson and ridge regression` `walk-forward validation` `ESPN` `FotMob` `FPL` `Open-Meteo` `Wikidata`
 
@@ -85,9 +88,9 @@ One screen of evidence per match, two forecasting models you can audit, and a me
 
 ![Kutubil](assets/kutubil.png)
 
-**Built and shipped in under 24 hours:** first commit on a Saturday evening, live on Cloudflare the next afternoon with the data pipeline and online rooms working; automated backups and a guarded deploy followed the same evening.
+**Built and shipped in under 24 hours.** The first commit went in on a Saturday evening. By the next afternoon the game was live on Cloudflare with its data pipeline and online rooms working. Automated backups and a guarded deploy followed that evening.
 
-A daily 3×3 grid for film fans: name an actor who fits both the row and the column. Film data comes from Wikidata and TMDB, gets cleaned into six catalogues (global, Turkish film and TV, Korean, Gen-Z and a mix) and a generator builds a new grid every night. You can also challenge a friend in a live room, and there is a playable-ad version of the game built for seven ad networks.
+A daily 3×3 grid for film fans: name an actor who fits both the row and the column. Film data comes from Wikidata and TMDB and is cleaned into six catalogues (global, Turkish film and TV, Korean, Gen-Z and a mix). A generator builds a new grid every night. You can also challenge a friend in a live room. I also built a playable-ad version of the game for seven ad networks.
 
 `React 19` `Vite` `TypeScript` `Cloudflare Workers` `D1` `Durable Objects`
 
@@ -95,7 +98,7 @@ A daily 3×3 grid for film fans: name an actor who fits both the row and the col
 
 ![Firing XI](assets/firing-xi.png)
 
-Managers build squads and play each other in a weekly league. I wrote the simulator before the game, because the hard part isn't the screens, it's making sure the rules give every manager a fair season. Every rule change runs through hundreds of simulated seasons and 500+ tests before it reaches the game. Mobile-first, with a pitch view, kit-style player cards and drag-and-drop line-ups. The repo is private for now; happy to walk anyone through it.
+Managers build squads and play each other in a weekly league. I wrote the simulator before the game, because the hard part is making sure the rules give every manager a fair season. Every rule change runs through hundreds of simulated seasons and 500+ tests before it reaches the game. The game is mobile-first, with a pitch view, kit-style player cards and drag-and-drop line-ups. The repo is private for now, but I'm happy to walk anyone through it.
 
 `Node.js` `JavaScript` `CSS` `Headless browser testing`
 
@@ -103,13 +106,13 @@ Managers build squads and play each other in a weekly league. I wrote the simula
 
 ## AI-powered automation and brand systems
 
-I build automation that takes repetitive work off people's plates: agents that research and write, pipelines that collect, clean and score data, and template systems that keep every output on-brand. Some examples:
+I also automate repetitive work with agents, data pipelines and on-brand template systems. Some examples:
 
-- **Job-market pipeline.** Collects new listings twice a day, scores each one against my CV with a rule layer plus an LLM rubric (with an audit that checked the rubric's reasons against the listing text: 97–100% grounded, zero invented claims), pushes the results to a Google Sheet and runs unattended on Windows Task Scheduler with a health check and a desktop alert when something breaks.
-- **Brand systems in Claude Design.** For Firing XI I designed the whole identity on a Claude Design canvas: logo, colour and type tokens and ready-made templates for posts, stories and thumbnails. All of them read from one tokens file, so a new post comes out on-brand without being redesigned and the game's interface uses the same file.
+- **Job-market pipeline.** Collects new listings twice a day and scores each one against my CV with a rule layer plus an LLM rubric. An audit checked the rubric's reasons against the listing text and found them 97–100% grounded, with no invented claims. Results go to a Google Sheet. The whole pipeline runs unattended on Windows Task Scheduler with a health check and a desktop alert when something breaks.
+- **Brand systems in Claude Design.** For Firing XI I designed the whole identity on a Claude Design canvas, from the logo and the colour and type tokens to ready-made templates for posts, stories and thumbnails. Everything reads from one tokens file, so a new post comes out on-brand without redesign work. The game's interface uses the same file.
 - **Social content agent** for a football game's accounts. It learns the brand's voice from past posts, plans a week of varied ideas across content pillars and writes a ready-to-use image prompt for each, with automated checks against the brand rules.
 - **Football news content engine.** Headline in, fact-checked Instagram carousel plus captions for Instagram and X out. Slides are rendered from HTML templates, so Turkish characters always come out right.
-- **Daily AI news digest.** Collects Claude and Anthropic news every morning, summarizes it in Turkish and adds a new page to a Google Slides "magazine" with a linked table of contents.
+- **Daily AI news digest.** Collects Claude and Anthropic news every morning, summarises it in Turkish and adds a new page to a Google Slides "magazine" with a linked table of contents.
 
 ## Also built
 
