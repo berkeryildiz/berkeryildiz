@@ -82,7 +82,9 @@ Macko turns every match into a sourced match file and a forecast that explains i
 
 Macko is built to run unattended. Request budgets, a circuit breaker and disk caches keep it up when a data feed fails. Model training runs in a worker thread so the dashboard stays responsive. Every model change re-runs the backtest before it goes live.
 
-`Next.js` `TypeScript` `Node.js worker threads` `Poisson and ridge regression` `walk-forward validation` `ESPN` `FotMob` `FPL` `Open-Meteo` `Wikidata`
+In November 2026 I moved Macko from Next.js 14 to 15 and from React 18 to 19, mainly to close security advisories the old version would never get a fix for. Before merging I compared 24 screens (12 views at desktop and mobile widths) pixel by pixel against the old version, using recorded data and a frozen clock. No screen changed beyond anti-aliasing noise. The upgrade cleared every critical npm audit advisory but also opened two new endpoints outside the login check, which I found and closed. I measured how each API route caches data on both versions, so no screen would quietly start showing stale data. All 332 automated tests pass.
+
+`Next.js 15` `React 19` `TypeScript` `Node.js worker threads` `Poisson and ridge regression` `walk-forward validation` `ESPN` `FotMob` `FPL` `Open-Meteo` `Wikidata`
 
 ## Kutubil: daily film trivia grid ([play it](https://oyna.kutubil.workers.dev))
 
