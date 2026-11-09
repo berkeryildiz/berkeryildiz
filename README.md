@@ -22,32 +22,27 @@ Pre-match information is scattered across a dozen sources. Most predictions can'
 
 Macko turns every match into a sourced match file and a forecast that explains itself. It covers 100+ matches a day (European leagues, UEFA competitions and the NBA), with live, upcoming and finished views and a nine-day calendar. It shows probabilities and the evidence behind them and makes no recommendations. It is a personal research tool and is not open to the public.
 
+<p align="center"><b>The independent model</b>: Galatasaray vs Fenerbahçe in its own match file, built without market prices. Pre-match view, rebuilt only from data available before match day</p>
+
+<img src="assets/macko-strip-independent.png" alt="Three phone screens from the independent model for Galatasaray vs Fenerbahçe: absentees, probable line-ups and form" width="100%">
+
 <table>
   <tr>
-    <td colspan="3" align="center"><b>The independent model</b>: Galatasaray vs Fenerbahçe in its own match file, built without market prices. Pre-match view, rebuilt only from data available before match day</td>
+    <td width="33%" align="center"><kbd>Absentees</kbd><br><sub>Who is likely to be missing, with a probability learned from the past for each name</sub></td>
+    <td width="33%" align="center"><kbd>Line-ups</kbd><br><sub>Probable line-ups for both teams in club colours, replaced by the real ones as soon as they are announced</sub></td>
+    <td width="33%" align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
   </tr>
+</table>
+
+<p align="center"><b>The first model</b>: Galatasaray vs Fenerbahçe from the market consensus, adjusted and graded. Recorded at 18:03 UTC, 26 minutes before kick-off. The score came in exactly as forecast</p>
+
+<img src="assets/macko-strip-first.png" alt="Three phone screens from the first model for Galatasaray vs Fenerbahçe: analysis, score probabilities and kick-off weather" width="100%">
+
+<table>
   <tr>
-    <td width="33%" align="center"><img src="assets/macko-02-absentees.png" alt="Absentees: goalkeeper record and likely missing players with a probability for each" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-03-lineups.png" alt="Probable line-ups of both teams on the pitch, in club colours" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-05-form.png" alt="Form and calendar: table position, last ten results, congestion, goal difference against expectation" width="100%"></td>
-  </tr>
-  <tr>
-    <td align="center"><kbd>Absentees</kbd><br><sub>Who is likely to be missing, with a probability learned from the past for each name</sub></td>
-    <td align="center"><kbd>Line-ups</kbd><br><sub>Probable line-ups for both teams in club colours, replaced by the real ones as soon as they are announced</sub></td>
-    <td align="center"><kbd>Form & calendar</kbd><br><sub>Last ten results, congestion and rest days, goals against expectation match by match</sub></td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center"><b>The first model</b>: Galatasaray vs Fenerbahçe from the market consensus, adjusted and graded. Recorded at 18:03 UTC, 26 minutes before kick-off. The score came in exactly as forecast</td>
-  </tr>
-  <tr>
-    <td width="33%" align="center"><img src="assets/macko-01-analysis.png" alt="Analysis tab: result and score with a confidence grade, who scores and what moved the forecast" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-04-probabilities.png" alt="Probabilities: the most likely score inside the chosen result, then the score grid" width="100%"></td>
-    <td width="33%" align="center"><img src="assets/macko-06-weather.png" alt="Weather: kick-off weather and each team's record in that weather" width="100%"></td>
-  </tr>
-  <tr>
-    <td align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores and what moved the forecast</sub></td>
-    <td align="center"><kbd>Probabilities</kbd><br><sub>The most likely score inside the chosen result, then the full score grid</sub></td>
-    <td align="center"><kbd>Weather</kbd><br><sub>Kick-off weather from Open-Meteo (the observed weather, for a finished match) and how each team has done in it</sub></td>
+    <td width="33%" align="center"><kbd>Analysis</kbd><br><sub>Result and score with a confidence grade, who scores and what moved the forecast</sub></td>
+    <td width="33%" align="center"><kbd>Probabilities</kbd><br><sub>The most likely score inside the chosen result, then the full score grid</sub></td>
+    <td width="33%" align="center"><kbd>Weather</kbd><br><sub>Kick-off weather from Open-Meteo (the observed weather, for a finished match) and how each team has done in it</sub></td>
   </tr>
 </table>
 
@@ -61,7 +56,7 @@ Macko turns every match into a sourced match file and a forecast that explains i
 
 ![The independent model on desktop, El Clásico in its pre-match view: its own probabilities, pros and cons per factor, likely absentees, travel, rest and weather](assets/macko-medyum.png)
 
-<sub>El Clásico, 25 Oct 2026 (Barcelona 1-2 Real Madrid), pre-match view. The market had Barcelona at 61%. The data-driven independent model (Medyum AI in the app) was even more confident at 69%. The rule-based variant was more cautious (54% Barcelona, 24% draw). All three favoured Barcelona and all three were wrong. One match proves little either way. The numbers below cover 5,849 of them.</sub>
+<sub>El Clásico, 25 Oct 2026 (Barcelona 1-2 Real Madrid), pre-match view. The market had Barcelona at 61%. The data-driven independent model (Medyum A in the app) was even more confident at 69%. The rule-based variant was more cautious (54% Barcelona, 24% draw). All three favoured Barcelona and all three were wrong. One match proves little either way. The numbers below cover 5,849 of them.</sub>
 
 **How often it is right**
 
